@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeActivity">
+
+    <Button
+        android:layout_marginLeft="10dp"
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Book" />
+
+    <RadioGroup
+        android:layout_centerHorizontal="true"
+        android:id="@+id/radioCondition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/radioName"
+            android:text="Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/radioType"
+            android:text="Type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </RadioGroup>
+
+    <EditText
+        android:layout_below="@+id/btnAdd"
+        android:layout_toLeftOf="@+id/btnSearch"
+        android:hint="Search name, type"
+        android:id="@+id/edtSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+
+        android:layout_below="@+id/btnAdd"
+        android:id="@+id/btnSearch"
+        android:layout_alignParentRight="true"
+        android:text="Search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/btnAdd"
+        android:text="All Type"
+        android:id="@+id/btnShowType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ListView
+        android:layout_below="@+id/btnShowType"
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

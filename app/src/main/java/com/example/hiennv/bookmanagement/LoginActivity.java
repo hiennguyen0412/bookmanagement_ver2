@@ -13,12 +13,12 @@ import android.widget.Toast;
 import com.example.hiennv.bookmanagement.utils.DBUtils;
 
 public class LoginActivity extends AppCompatActivity {
-    final String DATABASE_NAME = "BookManagement.sqlite";
-    SQLiteDatabase database;
-    EditText edtUsername;
-    EditText edtPassword;
-    Button btnLogin;
-    Button btnRegister;
+    private final String DATABASE_NAME = "BookManagement.sqlite";
+    private SQLiteDatabase database;
+    private EditText edtUsername;
+    private EditText edtPassword;
+    private Button btnLogin;
+    private Button btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,13 +60,12 @@ public class LoginActivity extends AppCompatActivity {
         String username = edtUsername.getText().toString();
         String password = edtPassword.getText().toString();
         database = DBUtils.initDatabase(this, DATABASE_NAME);
-        Cursor cursor = database.rawQuery("SELECT * FROM Account WHERE Username = ? " +
-                "AND Password = ?", new String[]{username, password});
+        String sqlCommand = "SELECT * FROM Account WHERE Username = ? AND Password = ?";
+        Cursor cursor = database.rawQuery(sqlCommand, new String[]{username, password});
         for (int i = 0; i < cursor.getCount(); i++) {
             cursor.moveToPosition(i);
             return true;
         }
-
 
         return false;
     }

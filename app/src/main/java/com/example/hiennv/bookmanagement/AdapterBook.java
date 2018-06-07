@@ -30,8 +30,8 @@ import java.util.ArrayList;
  */
 
 public class AdapterBook extends BaseAdapter {
-    Activity context;
-    ArrayList<Book> list;
+    private Activity context;
+    private ArrayList<Book> list;
 
     public AdapterBook(Activity context, ArrayList<Book> list) {
         this.context = context;

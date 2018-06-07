@@ -23,11 +23,11 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 public class UpdateActivity extends AppCompatActivity {
-    final String DATABASE_NAME = "BookManagement.sqlite";
-    final int REQUEST_CHOOSE_PHOTO = 321;
-    EditText edtID, edtName, edtAuthor, edtType, edtPrice;
-    ImageView imgUpdate;
-    Button btnSave, btnCancel, btnSelect;
+    private final String DATABASE_NAME = "BookManagement.sqlite";
+    private final int REQUEST_CHOOSE_PHOTO = 321;
+    private EditText edtID, edtName, edtAuthor, edtType, edtPrice;
+    private ImageView imgUpdate;
+    private Button btnSave, btnCancel, btnSelect;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +69,8 @@ public class UpdateActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int id = intent.getIntExtra("ID", -1);
         SQLiteDatabase database = DBUtils.initDatabase(this, DATABASE_NAME);
-        Cursor cursor = database.rawQuery("SELECT * FROM Book WHERE Book.ID = ?", new String[]{id+""});
+        String sqlCommand = "SELECT * FROM Book WHERE Book.ID = ?";
+        Cursor cursor = database.rawQuery(sqlCommand, new String[]{id+""});
         cursor.moveToFirst();
 
         String name = cursor.getString(1);

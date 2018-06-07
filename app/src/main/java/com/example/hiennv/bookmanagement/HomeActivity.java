@@ -19,16 +19,16 @@ import com.example.hiennv.bookmanagement.utils.DBUtils;
 import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
-    final String DATABASE_NAME = "BookManagement.sqlite";
-    SQLiteDatabase database;
+    private final String DATABASE_NAME = "BookManagement.sqlite";
+    private SQLiteDatabase database;
 
-    ListView listView;
-    ArrayList<Book> list;
-    AdapterBook adapter;
-    Button btnAdd, btnShowAllType, btnSearch;
-    RadioGroup radioCondition;
-    RadioButton radioSelected;
-    EditText edtSearch;
+    private ListView listView;
+    private ArrayList<Book> list;
+    private AdapterBook adapter;
+    private Button btnAdd, btnShowAllType, btnSearch;
+    private RadioGroup radioCondition;
+    private RadioButton radioSelected;
+    private EditText edtSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
